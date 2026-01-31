@@ -1,148 +1,55 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MOLA · Premium Sandals</title>
 
-<title>MOLA · Premium Sandals</title>
+  <!-- ICONO iOS -->
+  <link rel="apple-touch-icon" href="apple-touch-icon.png 2.jpg">
 
-<!-- ICONO PARA iOS -->
-<link rel="apple-touch-icon" href="apple-touch-icon.png 2.jpg">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="white">
-<meta name="apple-mobile-web-app-title" content="MOLA">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
 
-<style>
-body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial;
-    background: #ffffff;
-    color: #111;
-}
+    .container {
+      text-align: center;
+    }
 
-.screen {
-    display: none;
-    min-height: 100vh;
-    padding: 24px;
-    box-sizing: border-box;
-}
+    /* 🔧 AJUSTE DEL LOGO (AQUÍ ESTÁ EL CAMBIO) */
+    .logo {
+      width: 320px;          /* ⬅️ tamaño del logo */
+      max-width: 85vw;
+      margin-bottom: 40px;
+    }
 
-.screen.active {
-    display: block;
-}
-
-.center {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.logo {
-    max-width: 260px;
-    margin-bottom: 30px;
-}
-
-button {
-    border: none;
-    border-radius: 30px;
-    padding: 14px 28px;
-    font-size: 16px;
-    cursor: pointer;
-    background: #000;
-    color: #fff;
-}
-
-.back {
-    background: none;
-    color: #000;
-    font-size: 14px;
-    margin-bottom: 20px;
-    cursor: pointer;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
-}
-
-.card {
-    border: 1px solid #eee;
-    border-radius: 12px;
-    padding: 10px;
-}
-
-.card img {
-    width: 100%;
-    border-radius: 8px;
-}
-
-.card h4 {
-    font-size: 14px;
-    margin: 8px 0 4px;
-}
-
-.price {
-    font-weight: bold;
-}
-</style>
+    .btn {
+      display: inline-block;
+      padding: 18px 48px;
+      background: #000;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 40px;
+      font-size: 18px;
+      letter-spacing: 3px;
+    }
+  </style>
 </head>
 
 <body>
+  <div class="container">
+    <img src="logo-mola.png.jpg" alt="MOLA Premium Sandals" class="logo">
 
-<!-- HOME -->
-<div id="home" class="screen active center">
-    <img src="apple-touch-icon.png 2.jpg" class="logo" alt="MOLA">
-    <button onclick="show('catalog-message')">CATÁLOGO</button>
-</div>
-
-<!-- MENSAJE -->
-<div id="catalog-message" class="screen center">
-    <button class="back" onclick="show('home')">← Volver</button>
-    <p>Se está creando algo nuevo en este sitio.</p>
-    <br>
-    <button onclick="show('catalog')">Ver modelos</button>
-</div>
-
-<!-- CATÁLOGO -->
-<div id="catalog" class="screen">
-    <button class="back" onclick="show('home')">← Volver</button>
-
-    <div class="grid">
-        <div class="card">
-            <img src="https://via.placeholder.com/300x300?text=Sandalia+1">
-            <h4>Sandalia Polo Club</h4>
-            <div class="price">$559.00</div>
-        </div>
-
-        <div class="card">
-            <img src="https://via.placeholder.com/300x300?text=Sandalia+2">
-            <h4>Sandalia Aeropostale</h4>
-            <div class="price">$559.00</div>
-        </div>
-
-        <div class="card">
-            <img src="https://via.placeholder.com/300x300?text=Sandalia+3">
-            <h4>Sandalia Andrea</h4>
-            <div class="price">$499.00</div>
-        </div>
-
-        <div class="card">
-            <img src="https://via.placeholder.com/300x300?text=Sandalia+4">
-            <h4>Sandalia Forever 21</h4>
-            <div class="price">$629.00</div>
-        </div>
-    </div>
-</div>
-
-<script>
-function show(id) {
-    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
-}
-</script>
-
+    <!-- ✅ NAVEGACIÓN REAL -->
+    <a href="catalogo.html" class="btn">CATÁLOGO</a>
+  </div>
 </body>
 </html>
