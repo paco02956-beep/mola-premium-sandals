@@ -3,167 +3,57 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MOLA Premium Sandals</title>
 
-  <!-- PWA básico -->
+  <title>MOLA | Premium Sandals</title>
+  <meta name="description" content="MOLA Premium Sandals – Diseño, comodidad y estilo." />
+
+  <!-- Apple Touch Icon (iOS Home Screen) -->
+  <link rel="apple-touch-icon" href="apple-touch-icon.png%202.jpg">
+
+  <!-- Favicon fallback -->
+  <link rel="icon" href="apple-touch-icon.png%202.jpg" type="image/jpeg">
+
+  <!-- iOS Web App -->
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="MOLA">
 
+  <!-- Estilos básicos -->
   <style>
-    :root {
-      --bg: #ffffff;
-      --text-main: #1c1c1e;
-      --text-soft: #6e6e73;
-      --shadow-light: rgba(255,255,255,0.9);
-      --shadow-dark: rgba(0,0,0,0.12);
-    }
-
-    * {
-      box-sizing: border-box;
-      -webkit-tap-highlight-color: transparent;
-    }
-
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text-main);
-      min-height: 100vh;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #ffffff;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
 
-    /* VISTAS */
-    .view {
-      display: none;
-      width: 100%;
-      max-width: 420px;
-      padding: 40px 24px;
+    .container {
       text-align: center;
+      padding: 20px;
     }
 
-    .view.active {
-      display: block;
+    img {
+      max-width: 90%;
+      height: auto;
     }
 
-    /* LOGO */
-    .logo {
-      width: 260px;
-      max-width: 80%;
-      margin: 0 auto 24px;
-      animation: logoIn 1.2s ease forwards, breathe 6s ease-in-out infinite;
-    }
-
-    @keyframes logoIn {
-      from {
-        opacity: 0;
-        transform: scale(0.92);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
-    @keyframes breathe {
-      0%, 100% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.015);
-      }
-    }
-
-    /* TEXTO */
     h1 {
-      font-size: 1.4rem;
-      margin: 8px 0;
-      letter-spacing: 0.04em;
-    }
-
-    p {
-      font-size: 0.95rem;
-      color: var(--text-soft);
-      margin-bottom: 32px;
-    }
-
-    /* BOTONES */
-    .btn {
-      width: 100%;
-      padding: 16px;
-      margin: 14px 0;
-      font-size: 1rem;
-      border-radius: 18px;
-      background: var(--bg);
-      border: none;
-      cursor: pointer;
-      box-shadow:
-        8px 8px 16px var(--shadow-dark),
-        -8px -8px 16px var(--shadow-light);
-      transition: all 0.15s ease;
-    }
-
-    .btn:active {
-      box-shadow:
-        inset 6px 6px 12px var(--shadow-dark),
-        inset -6px -6px 12px var(--shadow-light);
-      transform: scale(0.97);
-    }
-
-    .back {
-      margin-top: 40px;
-      font-size: 0.9rem;
-      background: none;
-      box-shadow: none;
-      color: var(--text-soft);
+      margin-top: 16px;
+      font-size: 1.2rem;
+      letter-spacing: 0.15em;
+      color: #222;
     }
   </style>
 </head>
+
 <body>
-
-  <!-- HOME -->
-  <div id="home" class="view active">
-    <img src="logo-mola.png.jpg" alt="MOLA Premium Sandals" class="logo">
-
-    <h1>MOLA</h1>
-    <p>Premium Sandals</p>
-
-    <button class="btn" onclick="go('info')">Explorar</button>
+  <div class="container">
+    <img src="logo-mola.png.jpg" alt="MOLA Premium Sandals">
+    <h1>PREMIUM SANDALS</h1>
   </div>
-
-  <!-- INFO -->
-  <div id="info" class="view">
-    <h1>Próximamente</h1>
-    <p>
-      Diseño, confort y espíritu libre.<br>
-      Estamos preparando algo especial.
-    </p>
-
-    <button class="btn back" onclick="back()">← Volver</button>
-  </div>
-
-  <script>
-    let historyStack = ['home'];
-
-    function go(viewId) {
-      if (navigator.vibrate) navigator.vibrate(20);
-
-      document.querySelector('.view.active').classList.remove('active');
-      document.getElementById(viewId).classList.add('active');
-      historyStack.push(viewId);
-    }
-
-    function back() {
-      if (historyStack.length > 1) {
-        historyStack.pop();
-        const previous = historyStack[historyStack.length - 1];
-
-        document.querySelector('.view.active').classList.remove('active');
-        document.getElementById(previous).classList.add('active');
-      }
-    }
-  </script>
-
 </body>
 </html>
